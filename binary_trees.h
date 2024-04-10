@@ -37,4 +37,5 @@ size_t binary_tree_leaves(const binary_tree_t *tree);
 void leaves_binary_tree(const binary_tree_t *tree, size_t *leaves);
 void nodes_binary_tree(const binary_tree_t *tree, size_t *nodes);
 size_t binary_tree_nodes(const binary_tree_t *tree);
+int binary_tree_balance(const binary_tree_t *tree);
 #endif
