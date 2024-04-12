@@ -20,7 +20,8 @@ int binary_tree_is_avl(const binary_tree_t *tree)
 		height_left = 1 + binary_tree_height(tree->left);
 	if (tree->right != NULL)
 		height_right = 1 + binary_tree_height(tree->right);
-	if (height_left - height_right > 1)
+	if (height_left - height_right > 1 ||
+			height_right - height_left > 1)
 		return (0);
 	return (1);
 }
