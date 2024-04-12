@@ -1,4 +1,5 @@
 #include "binary_trees.h"
+
 /**
  * binary_tree_levelorder - levelorder transverse
  * @tree: tree
@@ -11,7 +12,6 @@ void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 	binary_tree_t **tmp;
 	size_t i = 0, j, k;
 	int index = 0;
-
 	
 	if (func != NULL && tree != NULL)
 	{
@@ -35,8 +35,6 @@ void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 			}
 			i++;
 		}
-		while (j--)
-			free(tmp[j]);
 		free(tmp);
 	}
 }
@@ -55,7 +53,7 @@ void binary_tree_preorder_here(const binary_tree_t *tree,
 
 	if (tree != NULL && *index < 7)
 	{
-		tmp[*index] =  malloc(sizeof(binary_tree_t *));
+		/*tmp[*index] =  malloc(sizeof(binary_tree_t *));*/
 		tmp[*index] = (binary_tree_t *) tree;
 		*index = *index + 1;
 		left = tree->left;
