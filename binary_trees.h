@@ -19,6 +19,7 @@ typedef struct binary_tree_s
 	struct binary_tree_s *right;
 } binary_tree_t;
 
+typedef struct binary_tree_s bst_t;
 void binary_tree_print(const binary_tree_t *);
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value);
@@ -45,5 +46,20 @@ void is_perfect(const binary_tree_t *tree, int *flag,
 		size_t *depth1, size_t *depth2);
 binary_tree_t *binary_tree_sibling(binary_tree_t *node);
 binary_tree_t *binary_tree_uncle(binary_tree_t *node);
-binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second);
+binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
+		const binary_tree_t *second);
+void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
+void binary_tree_preorder_here(const binary_tree_t *tree,
+		binary_tree_t **tmp, int *index);
+int binary_tree_is_complete(const binary_tree_t *tree);
+void is_complete(const binary_tree_t *tree, int *flag,
+		int *flag_2, size_t height);
+binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
+binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
+int binary_tree_is_bst(const binary_tree_t *tree);
+void is_bst(const binary_tree_t *tree, int *flag);
+void more_bst(const binary_tree_t *tree, int *flag);
+bst_t *bst_insert(bst_t **tree, int value);
+bst_t *array_to_bst(int *array, size_t size);
+bst_t *bst_search(const bst_t *tree, int value);
 #endif
