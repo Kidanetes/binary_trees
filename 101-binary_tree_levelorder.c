@@ -12,7 +12,7 @@ void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 	binary_tree_t **tmp;
 	size_t i = 0, j, k;
 	int index = 0;
-	
+
 	if (func != NULL && tree != NULL)
 	{
 		size = binary_tree_size(tree);
@@ -51,7 +51,7 @@ void binary_tree_preorder_here(const binary_tree_t *tree,
 {
 	binary_tree_t *left, *right;
 
-	if (tree != NULL && *index < 7)
+	if (tree != NULL)
 	{
 		/*tmp[*index] =  malloc(sizeof(binary_tree_t *));*/
 		tmp[*index] = (binary_tree_t *) tree;
