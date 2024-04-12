@@ -60,7 +60,7 @@ void is_complete(const binary_tree_t *tree, int *flag,
 			*flag = 0;
 			return;
 		}
-		if (tree->left != NULL && tree->right == NULL)
+		if (tree->left != NULL)
 			*flag_2 = 0;
 	}
 
